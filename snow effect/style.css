@@ -1,0 +1,33 @@
+body {
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  cursor: crosshair;
+  background: rgb(35, 35, 35);
+}
+/* MERCI SEB pour l'idée :
+Guider la chute de la neige : appliquer votre direction au ROTATE
+exemple : transform:rotate(90deg) va faire aller vers le haut */
+#snow_container {
+  width: 900px; /*adapter à votre code*/
+  height: 900px;
+  transform: rotate(270deg);
+}
+/* La forme de la neige. Si vous voulez mettre des étoiles ou autre changez le background image :) */
+.snow {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 5px white;
+  opacity: 0;
+  animation: fall 10s forwards; /*  Durée de la chute  */
+}
+/* Si vous voulez que la neige se cumule, mettre left & bottom à 0 ou 5px et enlever le setTimeOut qui supprime la neige*/
+@keyframes fall {
+  to {
+    left: 0px;
+    bottom: 0px;
+    opacity: 1;
+    color: white;
+  }
+}
